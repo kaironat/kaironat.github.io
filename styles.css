@@ -1,0 +1,204 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth; /* Hace que el desplazamiento sea suave */
+    background-color: #181a1b;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+header {
+    background-color: black;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    font-family: "Vollkorn", serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-family: "Vollkorn", serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+    margin: 0px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-link.active,
+.nav-link:hover {
+    background-color: #181a1b;
+    color: #bbb7b0;
+    border-color: #7b7265;
+    border-radius: 5px;
+}
+
+/* Estilos de la sección de galería */
+main {
+    padding: 20px 0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    cursor: pointer; /* Cambia el cursor al hacer hover sobre las imágenes */
+    transition: transform 0.3s ease; /* Añade una transición suave al cambio de tamaño */
+}
+
+.gallery img.large {
+    transform: scale(1.1); /* Ajusta el tamaño de la imagen al hacerla más grande */
+}
+
+/* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: auto;
+}
+
+.modal-content {
+    display: block;
+    margin: auto;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer; /* Cambia el cursor al hacer hover sobre la imagen */
+    transition: transform 0.3s ease; /* Añade una transición suave al cambio de tamaño */
+    background-color: transparent; /* Establece el fondo transparente por defecto */
+}
+
+/* Estilos para la imagen cuando está en modo horizontal */
+.modal-content.horizontal {
+    width: 100vh; /* Cambia el ancho de la imagen */
+    height: auto;
+    transform-origin: center center; /* Centra la transformación */
+    background-color: #000; /* Establece el fondo negro */
+}
+
+/* Estilos adicionales para dispositivos en modo apaisado */
+@media screen and (orientation: landscape) {
+    .modal {
+        background-color: #000; /* Fondo negro cuando el dispositivo está en modo apaisado */
+    }
+}
+
+/* Estilos para la imagen cuando está en modo de zoom */
+.modal-content.zoom {
+    cursor: zoom-out; /* Cambia el cursor al hacer zoom en la imagen */
+}
+
+.modal-content.zoom:hover {
+    cursor: zoom-in;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: #ccc;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.counter {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+footer {
+    background-color: black;
+    color: #fff;
+    padding: 5px;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+
+footer p{
+   font-size: 15px;
+   text-align: center;
+}
